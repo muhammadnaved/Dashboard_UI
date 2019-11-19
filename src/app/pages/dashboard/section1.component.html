@@ -1,0 +1,296 @@
+<div class=" row" style="margin-top: 20px;">
+    <div class=" col-12 col-lg-9" style="margin-bottom: 20px;">
+        <div class=" row">
+            <div class=" col-12">
+                <mat-accordion multi="true">
+                    <mat-expansion-panel expanded>
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                Division 1
+                            </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <mat-form-field style="float: right; margin-top: -10px;">
+                            <input matInput [matDatepicker]="picker1" placeholder="Choose a date">
+                            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                            <mat-datepicker #picker1 ></mat-datepicker>
+                        </mat-form-field>
+                        <div class=" row division1" style="margin-top: 50px;">
+                            <div class=" col-12 col-xl-7" style="margin-bottom: 15px;">
+                                <h5>FY 2019:</h5>
+                                <div class=" row budget-list" style="padding-left: 15px;">
+                                    <div>
+                                        <span>Budget YTD</span> $5.3M
+                                    </div>
+                                    <div style="margin-left: 20px">
+                                        <span>Budget Variance YTD</span> $0.7M
+                                    </div>
+                                    <div style="margin-left: 20px;">
+                                        <span>Spent YTD</span> $4.3M
+                                    </div>
+                                </div>
+                            </div>
+                            <div class=" col-12 col-xl-5">
+                                <div>
+                                    <h5><strong>15</strong> Total Active Projects</h5>
+                                    <div class=" project-item back-green">12<i class="fa fa-arrow-up"></i></div>
+                                    <div class=" project-item back-yellow">12<i class="fa fa-arrow-down"></i></div>
+                                    <div class=" project-item back-red">1<i class="fa fa-arrow-down"></i></div>
+                                    <div class=" project-item back-gray">1<i class="fa fa-arrow-down"></i></div>
+                                </div>
+                                <div class="circle-list" style="margin-top: 10px;">
+                                    <span style='font-size: 11px;'>
+                                        <i class="fa fa-dot-circle" style="color: rgb( 82, 182, 146);"></i>
+                                        At Risk
+                                    </span>
+                                    <span style='font-size: 11px;'>
+                                        <i class="fa fa-dot-circle" style="color: rgb( 255, 189, 76);"></i>
+                                        On Hold
+                                    </span>
+                                    <span style='font-size: 11px;'>
+                                        <i class="fa fa-dot-circle" style="color: rgb( 252, 111, 117);"></i>
+                                        Delayed
+                                    </span>
+                                    <span style='font-size: 11px;'>
+                                        <i class="fa fa-dot-circle" style="color: rgb( 127, 127, 127);"></i>
+                                        On Track
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </mat-expansion-panel>
+                <mat-expansion-panel expanded>
+                    <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Division 2
+                    </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <mat-form-field style="float: right; margin-top: -10px;">
+                        <input matInput [matDatepicker]="picker2" placeholder="Choose a date">
+                        <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                        <mat-datepicker #picker2 ></mat-datepicker>
+                    </mat-form-field>
+                    <div class=" row" style="margin-top: 50px;">
+                        <div class=" graph-box col-12 col-md-6 col-xl-3" *ngFor="let id of [0,1,2,3]" style="margin-bottom: 15px;">
+                        <div class=" col-12 graph-box-content">
+                            <i class="fa fa-caret-down" style="color: rgb( 236, 115, 120); float: right; font-size: 20px; margin-right: 10px;"></i>
+                            <div class=" box-title"><h5>Graph1</h5></div>
+                            <div class="chartdiv_{{id}}" style="height: 180px;"></div>
+                        </div>
+                        <div class=" col-12" style="margin-top: 20px;">
+                            <div style="margin: 0 auto; width: 160px;">
+                            <div class=" color-box back-yellow">1</div>
+                            <div class=" color-box back-gray">2</div>
+                            <div class=" color-box back-red">3</div>
+                            <div class=" color-box back-green">4</div>
+                            </div>
+                        </div>      
+                        </div>
+                    </div>
+                    <div class=" row indicator-list" style="margin-top: 25px;">
+                        <div class=" col-12 col-md-6" style="padding-left: 30px; margin-bottom: 15px;">
+                        <span style='font-size: 11px;'>
+                            <i class="fa fa-dot-circle" style="color: rgb( 255, 189, 76);"></i>
+                            At Risk
+                        </span>
+                        <span style='font-size: 11px;'>
+                            <i class="fa fa-dot-circle" style="color: rgb( 127, 127, 127)"></i>
+                            On Hold
+                        </span>
+                        <span style='font-size: 11px;'>
+                            <i class="fa fa-dot-circle" style="color: rgb( 252, 111, 117);"></i>
+                            Delayed
+                        </span>
+                        <span style='font-size: 11px;'>
+                            <i class="fa fa-dot-circle" style="color: rgb( 82, 182, 146);"></i>
+                            On Track
+                        </span>
+                        </div>
+                        <div class=" col-12 col-md-6" style="padding-left: 30px;">
+                        <span style='font-size: 11px;'>
+                            <i class="fa fa-caret-up" style="color: rgb( 77, 124, 69); margin-right: 5px; font-size: 20px; vertical-align: middle;"></i>
+                            Positive MtM Trend
+                        </span>
+                        <span style='font-size: 11px;'>
+                            <i class="fa fa-caret-down" style="color: rgb( 236, 115, 120); margin-right: 5px; font-size: 20px; vertical-align: middle;"></i>
+                            Negative MtM Trend
+                        </span>
+                        <span style='font-size: 11px;'>
+                            <i class="fa fa-square fa-lg" style="color: rgb( 148, 194, 227); margin-right: 5px;"></i>
+                            No Change
+                        </span>
+                        </div>
+                    </div>
+                </mat-expansion-panel>
+                <mat-expansion-panel expanded>
+                    <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Division 3
+                    </mat-panel-title>
+                    </mat-expansion-panel-header> 
+                    <mat-form-field style="float: right; margin-top: -10px;">
+                        <input matInput [matDatepicker]="picker3" placeholder="Choose a date">
+                        <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
+                        <mat-datepicker #picker3 ></mat-datepicker>
+                    </mat-form-field>
+                    <div class=" row" style="margin-top: 50px;">
+                    <div class=" col-12 col-lg-6 col-xl-4" style="margin-bottom: 15px;">
+                        <div class=" box">
+                            <div class=" box-title">
+                                <h5>Graph 1</h5>
+                            </div>
+                            <div class=" box-content">
+                                <div class="row" style="height: 100%;">
+                                    <div class="col-6" style="padding-right: 40px;">
+                                        <ul class="onebar_items">
+                                            <li>Item 1</li>
+                                            <li>Item 2</li>
+                                            <li>Item 3</li>
+                                            <li>Item 4</li>
+                                            <li class="active">Item 5</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-6" style="padding: 30px 40px 30px 10px;">
+                                        <div style="max-width: 100px; height: 100%; position: relative;">
+                                            <div *ngFor="let color of ['rgb(0,175,80)', 'rgb(146,209,79)', 'rgb(255,230,153)', 'rgb(255,192,1)', 'rgb(254,0,0)']; let i=index;" [style.background]="color" style="width: 100%; height: 20%; position: relative !important;">
+                                                <div style="position: absolute; right: -25px; top: 20px; color: rgb( 180,180,180);">
+                                                    {{(i+1)*20}}
+                                                </div>
+                                                <div *ngFor="let id of [0,1,2,3,4]" style="width: 100%; height: 20%;">
+                                                    <div *ngIf="id!=4" style="float: right; width: 20%; height: 100%; border-bottom: solid 1px #222;"></div>
+                                                </div>
+                                            </div>                                            
+                                            <div style="position: absolute; right: -22px; top: 6px;">
+                                                <fa name="long-arrow-alt-left" size="lg"></fa>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>                    
+                            </div>
+                    </div>
+                    <div class=" col-12 col-lg-6 col-xl-4" style="margin-bottom: 15px;">
+                        <div class=" box">
+                        <div class=" box-title">
+                            <h5>Graph 1</h5>
+                        </div>
+                        <div class=" box-content">
+                            <div class="pie_chart pie_chart_1"></div>
+                        </div>                    
+                        </div>
+                    </div>
+                    <div class=" col-12 col-lg-6 col-xl-4" style="margin-bottom: 15px;">
+                        <div class=" box">
+                            <div class=" box-title">
+                                <h5>Graph 1</h5>
+                            </div>
+                            <div class=" box-content">
+                                <div class="pie_chart pie_chart_2"></div>
+                            </div>                    
+                            </div>
+                    </div>
+                    </div>                
+                </mat-expansion-panel>
+                <mat-expansion-panel expanded>
+                    <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Division 4
+                    </mat-panel-title>
+                    </mat-expansion-panel-header> 
+                    <mat-form-field style="float: right; margin-top: -10px;">
+                        <input matInput [matDatepicker]="picker4" placeholder="Choose a date">
+                        <mat-datepicker-toggle matSuffix [for]="picker4"></mat-datepicker-toggle>
+                        <mat-datepicker #picker4 ></mat-datepicker>
+                    </mat-form-field>
+                    <div class=" row" style="margin-top: 50px;">
+                    <div class=" col-12 col-lg-3 good-padding" style="margin-bottom: 15px;">
+                        <div class=" col-12 back-white graph-box-content">
+                            <div class="box-title">
+                                <h5>Graph1</h5>
+                            </div>
+                            <div class="chartdiv_4"></div>
+                        </div>
+                    </div>
+                    <div class=" col-12 col-lg-5" style=" padding-left: 30px; padding-right: 30px; margin-bottom: 15px;">
+                        <div class=" row back-white">
+                        <div class=" col-7 num-total-box" style="border-right: solid 2px rgb( 220, 220, 220);">
+                            <h2>27</h2>
+                            <h5>Open IT-Complicance Issues</h5>
+                        </div>
+                        <div class=" col-5" style="padding: 0px;">
+                            <div style=" height: 70px; border-bottom: solid 2px rgb( 220, 220, 220);" class="num-content-box box-critical">
+                            <div class=" row">
+                                <div class=" col-5 left">12</div>
+                                <div class=" col-7 right">Critical</div>
+                            </div>
+                            </div>
+                            <div style=" height: 70px; border-bottom: solid 2px rgb( 220, 220, 220);" class="num-content-box box-high">
+                            <div class=" row">
+                                <div class=" col-5 left">11</div>
+                                <div class=" col-7 right">High</div>
+                            </div>
+                            </div>
+                            <div style=" height: 70px;" class="num-content-box box-medium">
+                            <div class=" row">
+                                <div class=" col-5 left">4</div>
+                                <div class=" col-7 right">Medium</div>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    <div class=" col-12 col-lg-4 good-padding" style="margin-bottom: 15px;">
+                        <div class=" col-12 back-white" style="padding-left: 0px; padding-right: 0px;">
+                            <div class="box-title">
+                                <h5>Graph1</h5>
+                            </div>
+                            <div class="stacked_chart" style="height: 180px;"></div>
+                        </div>
+                    </div>
+                    </div>
+                </mat-expansion-panel>
+                </mat-accordion>
+            </div>
+            </div>
+        </div>
+        <div class=" col-12 col-lg-3">
+            <div class=" row">
+            <div class=" col-12">
+                <mat-accordion multi="true" id="right_bar">
+                <mat-expansion-panel expanded>
+                    <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Parameter 1
+                    </mat-panel-title>
+                    </mat-expansion-panel-header>
+
+                    Lorem ipsum dolor sit amet
+                    Lorem ipsum dolor sit amet
+                    Lorem ipsum dolor sit amet
+                </mat-expansion-panel>
+                <mat-expansion-panel expanded>
+                    <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Parameter 2
+                    </mat-panel-title>
+                    </mat-expansion-panel-header>
+
+                    Lorem ipsum dolor sit amet
+                    Lorem ipsum dolor sit amet
+                    Lorem ipsum dolor sit amet
+                </mat-expansion-panel>
+                <mat-expansion-panel expanded>
+                    <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Parameter 3
+                    </mat-panel-title>
+                    </mat-expansion-panel-header>
+
+                    Lorem ipsum dolor sit amet
+                    Lorem ipsum dolor sit amet
+                    Lorem ipsum dolor sit amet
+                </mat-expansion-panel>
+                </mat-accordion>
+            </div>
+        </div>
+    </div>
+</div>

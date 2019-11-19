@@ -1,0 +1,221 @@
+.mat-expansion-panel-header {
+    background: black !important;
+    height: 40px !important;
+}
+
+.mat-expansion-panel-header-title {
+    color: white !important;
+    font-size: 14px !important;
+}
+
+::ng-deep .mat-expansion-panel-body {
+    background: #f2f2f2 !important;
+    padding-top: 15px !important;
+}
+
+::ng-deep .mat-expansion-indicator::after {
+    color: white !important;
+}
+
+.pie_chart {
+    width: 100%;
+    height: 100%;
+ }
+
+ .onebar_chart {
+    width: 100%;
+    height: 100%;
+ }
+
+ .stacked_chart {
+     width: 100%;
+     height: 100%;
+ }
+  
+ .graph-box {
+    padding: auto 20px;
+ }
+
+ .graph-box-content {
+    background: white;
+    padding: 0px !important;
+ }
+
+ .graph-box h5 {
+     text-align: center;
+ }
+
+ .box {
+     width: 100%;
+ }
+
+ .box-title {
+    width: 100%;
+    height: 35px;
+    background: rgb( 203, 203, 203);
+ }
+ 
+ .box-title > h5 {
+    text-align: center;
+    font-size: 12px;
+    padding-top: 6px;
+ }
+
+ .box > .box-content {
+    width: 100%;
+    background: white;
+    height: 250px;
+    padding: 5px;
+ }
+
+ .back-white {
+     background: white;
+ }
+
+ .good-padding {
+     padding: 0px 15px;
+ }
+
+ .good-padding > div {
+     height: 210px;
+ }
+
+ .num-content-box {
+     padding: 25px 0px;
+ }
+
+ .num-content-box.box-medium {
+    background: rgb(255,230,153);
+ }
+
+ .num-content-box.box-high {
+    background: rgb(255,192,1);
+}
+
+.num-content-box.box-critical {
+    background: rgb( 252, 111, 117);
+}
+
+ .num-content-box .left {
+     font-size: 20px;
+     color: black;
+     text-align: right;
+     padding-right: 0px;
+ }
+
+ .num-content-box .right {
+     font-size: 12px;
+     color: rgb( 83, 108, 113);
+     padding-left: 10px;
+ }
+
+ .num-total-box {
+    padding-top: 30px;
+ }
+
+ .num-total-box > h2 {
+     font-size: 90px;
+     font-weight: 500;
+     text-align: center;
+     margin-bottom: 15px;
+ }
+
+ .num-total-box > h5 {
+     font-size: 12px;
+     text-align: center;
+     color: rgb( 83, 108, 113);
+ }
+
+ .color-box {
+     width: 33px;
+     height: 33px;
+     border-radius: 3px;
+     display: inline-block;
+     margin-left: 3px;
+     margin-right: 3px;
+     color: white;
+     padding-top: 6px;
+     text-align: center;
+ }
+
+ .back-yellow {
+     background: rgb( 255, 189, 76);
+ }
+
+ .back-gray {
+    background: rgb( 127, 127, 127);
+}
+
+.back-red {
+    background: rgb( 252, 111, 117);
+}
+
+.back-green {
+    background: rgb( 82, 182, 146);
+}
+
+.indicator-list span {
+    margin-right: 20px;
+}
+
+.circle-list span {
+    margin-right: 23px;
+}
+
+.budget-list > div {
+    color: rgb( 88, 131, 143);
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.budget-list > div > span {
+    color: rgb( 148, 148, 148);
+    font-size: 12px;
+    margin-right: 10px;
+}
+
+.project-item {
+    width: 60px;
+    height: 20px;
+    border-radius: 15px;
+    color: white;
+    display: inline-block;
+    margin-right: 15px;
+    padding: 0px 11px;
+    font-size: 12px;
+}
+
+.project-item > i {
+    float: right;
+    margin-top: 4px;
+    font-weight: bold;
+}
+
+.onebar_items {
+    list-style: none;
+    padding-left: 20px;
+    padding-top: 40px;
+}
+
+.onebar_items li {
+    background: rgb( 214, 214, 214);
+    border: solid 1px rgb( 200, 200, 200);
+    color: black;
+    text-align: center;
+    height: 30px;
+    padding-top: 5px;
+}
+
+.onebar_items li.active {
+    background: rgb( 1, 175, 77);
+    color: white;
+}
+
+@media(min-width:992px){
+    #right_bar {
+        position: fixed;
+        top: 185px;
+        bottom: 10px;
+        overflow-y: scroll;
+    }
+}
