@@ -1,0 +1,26 @@
+<div mat-dialog-title>
+  <div class="row">
+      <h6 class="col-10 matTitleName">Please enter the OTP share to your email id</h6>
+      <div class="col-2 text-right">
+          <i class="fa fa-times close-icon" aria-hidden="true" (click)="closeDialog()" matTooltip="Close"></i>
+      </div>
+  </div>
+  <mat-divider></mat-divider>
+</div>
+<mat-dialog-content class="mat-typogaphy">
+  <div class="col-12">
+      <form #otpForm="ngForm" (ngSubmit)="otpForm.form.valid">
+          <!--<div class="form-group">
+              <label for="exampleInputPassword1">OTP:</label>
+              <input type="text" class="form-control"
+                      id="nameInput" placeholder="Enter OTP" name="otp" [(ngModel)]="formData.otp" />
+          </div>-->
+    <mat-form-field class="example-full-width col-12">
+      <input matInput placeholder="Enter OTP" name="otp" [(ngModel)]="formData.otp" required>
+    </mat-form-field>
+          <div class="popUpButton">
+              <button mat-flat-button class="custBtn" color="primary" [disabled]="!otpForm.form.valid" (click)="sendOTPData(otpForm)">Submit</button>
+          </div>
+      </form>
+  </div>
+</mat-dialog-content>

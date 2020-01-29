@@ -1,0 +1,60 @@
+.fingerprintHolder{background: #eae6e6; padding: 0px; min-height: 80vh;}
+.fingerprintHeader{color: #fff; font-size: 20px; text-transform: uppercase;}
+.questionerText{padding:10px;}
+.eachGraph {
+  border: 1px solid #ccc;
+  margin: 1px;
+  color:#fff;
+  padding:15px 0px;
+  fill: #fff;
+}
+
+.fingerprintImg{background-image: url("../../../assets/img/fingerprint1.jpg"); background-position: center;
+    background-repeat: no-repeat; background-size: cover; min-height:180px;}
+.gauge-chart div{color: #fff; background: #211f1f !important;}
+.custBtn {
+    margin-right: 10px;
+    background-color: black;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: initial; margin-top:10px;
+}
+.questionForm label {
+    padding-left: 0px;
+    padding-top: 5px;
+}
+.fingerPrintSection {
+    /* height: 120px; */
+    background: rgba(0, 0, 0, 0.78);
+    margin-top: 1px;
+    background-image: linear-gradient(to right, rgba(222,198,154,1), rgb(187, 170, 136),rgba(50,44,34,1),rgba(0,0,0,1),rgba(0,0,0,1))
+}
+
+.fingerprintText {
+    text-align: justify;
+    color: #fff  !important;
+    line-height: 1.5;
+    font-family: 'Montserrat', arial, sans-serif;
+    padding-right: 1rem !important;
+}
+
+.fingerprintComponent.row {
+    margin: 0;
+    margin-top: 10px;
+}
+
+/* .fingerprintComponent.graphMainContainer.row {
+    margin-left: 15px;
+} */
+
+.lastActionBtn {
+    margin-top: 15px;
+    margin-right: 40px;
+}
+
+.modal{margin-top: 5.4%;}
+.modal-header{background: #000; color: #fff;}
+.modal-title{font-size: 14px;}
+.close{color:#fff;}
+
+.form-group .form-control, .input-group .form-control{padding:0px 10px;}

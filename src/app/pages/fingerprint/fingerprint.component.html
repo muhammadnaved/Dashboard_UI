@@ -1,0 +1,296 @@
+<app-fingerprint-header></app-fingerprint-header>
+<div class="col-12 fingerprintHolder">
+  <div class="fingerPrintSection col-12 p-0" *ngIf="userInputData">
+      <div class="row no-gutters">
+        <div class="col-md-3 col-sm-12 fingerprintImg">
+          <!--<img class="img-fluid" src="../assets/images/fingerprint1.jpg"/>-->
+        </div>
+        <div class="col-md-2 col-sm-12 my-auto text-center fingerprintHeader">Fingerprint Me</div>
+        <div class="col-md-7 col-sm-12 pl-3 pr-5 my-auto fingerprintText">
+            <p class="align-middle mb-0">Please provide us some basic information about your cyber organization and we will use it to "fingerprint" your security posture across the five functions of NIST Cybersecuirty Framework(CSF). Please note that this is only a preliminary view of your organization's performance based on the information you provided. It is not reflective of detailed operational performance of your orginization.<br><br>Contact us for a demo of our product OneCyberSolution (OCS), designed to provide a strategic view of your Cybersecurity posture and drive towards creating a robust defense and resiliency footprint.</p>
+        </div>
+      </div>
+  </div>
+  <mat-horizontal-stepper id="parentdiv" class="fingerprintStepper" [@.disabled]="true" linear #stepper1 (selectionChange)="selectionChange($event)">
+    <mat-step label="Identify">
+      <div class="col-12">
+        <div class="fingerprintComponent graphMainContainer justify-content-center row">
+            <rg-gauge-chart *ngFor="let data of chartData" class="eachGraph" [ngStyle]="{'background-color': data.name === 'Identify' ? '#0e0e0e' : '#505050', 'background-image': data.name === 'Identify' ? 'linear-gradient(#0e0e0e, #463f3f, #0e0e0e)' : 'linear-gradient(#505050, #8e8b8b, #505050)'}"
+            [canvasWidth]="canvasWidth"
+            [needleValue]="data.needleValue"
+            [centralLabel]="centralLabel"
+            [options]="options"
+            [name]="data.name"
+            [bottomLabel]="data.bottomLabel">
+            </rg-gauge-chart>
+        </div>
+      </div>
+
+      <div class="col-12 formSection" *ngIf="userInputData">
+        <div class="fingerprintComponent row ">
+          <div class="col-12">
+              <!--<h4 class="formHeader">Answer the following questions to assess your "<i>{{ tabtitle }}</i>" posture</h4>-->
+          <form class="questionForm" (ngSubmit)="onClickSubmit(fingerData)" #questForm="ngForm">
+              <div class="form-group col-md-12" *ngFor="let question of questions">
+              <div class="row">
+                  <label for="sel1" class="col-md-8">{{ question.value }}</label>
+                  <select class="form-control col-md-4" id="sel1" [(ngModel)]="fingerData[question.value]" name="{{ question.value }}">
+                  <option *ngFor="let option of question.answers; let i = index" value="{{ option.value * question.weight }} ; {{ option.option }}">{{ option.option }}</option>
+                  </select>
+              </div>
+              </div>
+          <!--<mat-form-field class="col-6" *ngFor="let question of questions">
+              <mat-label>{{ question.value }}</mat-label>
+              <mat-select [(ngModel)]="fingerData[question.value]" name="{{ question.value }}">
+              <mat-option *ngFor="let option of question.answers; let i = index" value="{{ option.value * question.weight }}">
+                  {{ option.option }}
+              </mat-option>
+              </mat-select>
+          </mat-form-field>-->
+          <div class="text-right mb-4">
+              <button mat-flat-button color="primary" matStepperNext class="custBtn">Next>></button>
+          </div>
+          </form>
+          </div>
+        </div>
+      </div>
+    </mat-step>
+
+    <mat-step label="Protect">
+      <div class="col-12">
+        <div class="fingerprintComponent graphMainContainer justify-content-center row">
+            <rg-gauge-chart *ngFor="let data of chartData" class="eachGraph" [ngStyle]="{'background-color': data.name === 'Protect' ? '#0e0e0e' : '#505050', 'background-image': data.name === 'Protect' ? 'linear-gradient(#0e0e0e, #463f3f, #0e0e0e)' : 'linear-gradient(#505050, #8e8b8b, #505050)'}"
+            [canvasWidth]="canvasWidth"
+            [needleValue]="data.needleValue"
+            [centralLabel]="centralLabel"
+            [options]="options"
+            [name]="data.name"
+            [bottomLabel]="data.bottomLabel">
+            </rg-gauge-chart>
+        </div>
+      </div>
+
+      <div class="col-12 formSection" *ngIf="userInputData">
+        <div class="fingerprintComponent row ">
+          <div class="col-12">
+              <!--<h4 class="formHeader">Answer the following questions to assess your "<i>{{ tabtitle }}</i>" posture</h4>-->
+            <form class="questionForm" (ngSubmit)="onClickSubmit(fingerData1)" #questForm="ngForm">
+              <div class="form-group col-md-12" *ngFor="let question of questions">
+                <div class="row">
+                  <label for="sel1" class="col-md-8">{{ question.value }}</label>
+                  <select class="form-control col-md-4" id="sel1" [(ngModel)]="fingerData1[question.value]" name="{{ question.value }}">
+                    <option *ngFor="let option of question.answers; let i = index" value="{{ option.value * question.weight }} ; {{ option.option }}">{{ option.option }}</option>
+                  </select>
+                </div>
+              </div>
+              <div class="text-right mb-4">
+                <button mat-flat-button color="primary" matStepperPrevious class="custBtn"><<Back</button>
+                <button mat-flat-button color="primary" matStepperNext class="custBtn">Next>></button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </mat-step>
+
+    <mat-step label="Detect">
+      <div class="col-12">
+        <div class="fingerprintComponent graphMainContainer justify-content-center row">
+            <rg-gauge-chart *ngFor="let data of chartData" class="eachGraph" [ngStyle]="{'background-color': data.name === 'Detect' ? '#0e0e0e' : '#505050', 'background-image': data.name === 'Detect' ? 'linear-gradient(#0e0e0e, #463f3f, #0e0e0e)' : 'linear-gradient(#505050, #8e8b8b, #505050)'}"
+            [canvasWidth]="canvasWidth"
+            [needleValue]="data.needleValue"
+            [centralLabel]="centralLabel"
+            [options]="options"
+            [name]="data.name"
+            [bottomLabel]="data.bottomLabel">
+            </rg-gauge-chart>
+        </div>
+      </div>
+
+      <div class="col-12 formSection" *ngIf="userInputData">
+        <div class="fingerprintComponent row ">
+          <div class="col-12">
+              <!--<h4 class="formHeader">Answer the following questions to assess your "<i>{{ tabtitle }}</i>" posture</h4>-->
+            <form class="questionForm" (ngSubmit)="onClickSubmit(fingerData2)" #questForm="ngForm">
+              <div class="form-group col-md-12" *ngFor="let question of questions">
+                <div class="row">
+                  <label for="sel1" class="col-md-8">{{ question.value }}</label>
+                  <select class="form-control col-md-4" id="sel1" [(ngModel)]="fingerData2[question.value]" name="{{ question.value }}">
+                    <option *ngFor="let option of question.answers; let i = index" value="{{ option.value * question.weight }} ; {{ option.option }}">{{ option.option }}</option>
+                  </select>
+                </div>
+              </div>
+              <div class="text-right mb-4">
+                <button mat-flat-button color="primary" matStepperPrevious class="custBtn"><<Back</button>
+                <button mat-flat-button color="primary" matStepperNext class="custBtn">Next>></button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </mat-step>
+
+    <mat-step label="Respond">
+      <div class="col-12">
+        <div class="fingerprintComponent graphMainContainer justify-content-center row">
+            <rg-gauge-chart *ngFor="let data of chartData" class="eachGraph" [ngStyle]="{'background-color': data.name === 'Respond' ? '#0e0e0e' : '#505050', 'background-image': data.name === 'Respond' ? 'linear-gradient(#0e0e0e, #463f3f, #0e0e0e)' : 'linear-gradient(#505050, #8e8b8b, #505050)'}"
+            [canvasWidth]="canvasWidth"
+            [needleValue]="data.needleValue"
+            [centralLabel]="centralLabel"
+            [options]="options"
+            [name]="data.name"
+            [bottomLabel]="data.bottomLabel">
+            </rg-gauge-chart>
+        </div>
+      </div>
+
+      <div class="col-12 formSection" *ngIf="userInputData">
+        <div class="fingerprintComponent row ">
+          <div class="col-12">
+              <!--<h4 class="formHeader">Answer the following questions to assess your "<i>{{ tabtitle }}</i>" posture</h4>-->
+            <form class="questionForm" (ngSubmit)="onClickSubmit(fingerData3)" #questForm="ngForm">
+              <div class="form-group col-md-12" *ngFor="let question of questions">
+                <div class="row">
+                  <label for="sel1" class="col-md-8">{{ question.value }}</label>
+                  <select class="form-control col-md-4" id="sel1" [(ngModel)]="fingerData3[question.value]" name="{{ question.value }}">
+                    <option *ngFor="let option of question.answers; let i = index" value="{{ option.value * question.weight }} ; {{ option.option }}">{{ option.option }}</option>
+                  </select>
+                </div>
+              </div>
+              <div class="text-right mb-4">
+                <button mat-flat-button color="primary" matStepperPrevious class="custBtn"><<Back</button>
+                <button mat-flat-button color="primary" matStepperNext class="custBtn">Next>></button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </mat-step>
+
+    <mat-step label="Recover" id="parentdiv1">
+        <div class="col-12">
+            <div class="fingerprintComponent graphMainContainer justify-content-center row" *ngIf="!lastStep">
+                <rg-gauge-chart *ngFor="let data of chartData" class="eachGraph" [ngStyle]="{'background-color': data.name === 'Recover' ? '#0e0e0e' : '#505050', 'background-image': data.name === 'Recover' ? 'linear-gradient(#0e0e0e, #463f3f, #0e0e0e)' : 'linear-gradient(#505050, #8e8b8b, #505050)'}"
+                  [canvasWidth]="canvasWidth"
+                  [needleValue]="data.needleValue"
+                  [centralLabel]="centralLabel"
+                  [options]="options"
+                  [name]="data.name"
+                  [bottomLabel]="data.bottomLabel">
+                </rg-gauge-chart>
+            </div>
+
+            <div class="fingerprintComponent graphMainContainer justify-content-center row" *ngIf="lastStep">
+                <rg-gauge-chart *ngFor="let data of chartData" class="eachGraph" [ngStyle]="{'background-color': data.name === 'Recover' ? '#0e0e0e' : '#0e0e0e', 'background-image': data.name === 'Recover' ? 'linear-gradient(#0e0e0e, #463f3f, #0e0e0e)' : 'linear-gradient(#0e0e0e, #463f3f, #0e0e0e)'}"
+                  [canvasWidth]="canvasWidth"
+                  [needleValue]="data.needleValue"
+                  [centralLabel]="centralLabel"
+                  [options]="options"
+                  [name]="data.name"
+                  [bottomLabel]="data.bottomLabel">
+                </rg-gauge-chart>
+            </div>
+        </div>
+
+        <div class="col-12 formSection" *ngIf="userInputData">
+            <div class="fingerprintComponent row ">
+                <div class="col-12">
+                    <!--<h4 class="formHeader">Answer the following questions to assess your "<i>{{ tabtitle }}</i>" posture</h4>-->
+                    <form class="questionForm" (ngSubmit)="onClickSubmit1(fingerData4)" #questForm="ngForm">
+                        <div class="form-group col-md-12" *ngFor="let question of questions">
+                            <div class="row">
+                                <label for="sel1" class="col-md-8">{{ question.value }}</label>
+                                <select class="form-control col-md-4" id="sel1" [(ngModel)]="fingerData4[question.value]" name="{{ question.value }}">
+                                    <option *ngFor="let option of question.answers; let i = index" value="{{ option.value * question.weight }} ; {{ option.option }}">{{ option.option }}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="text-right mb-4">
+                            <button mat-flat-button color="primary" matStepperPrevious class="custBtn"><<Back</button>
+                            <button mat-flat-button color="primary" class="custBtn">Done</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="col-12" *ngIf="!userInputData" #content>
+          <table class="table table-bordered">
+            <tbody>
+              <tr *ngFor="let data of unique | custpipe; let i = index">
+                <td>{{ data.screen }}</td>
+                <td>{{ data.question }}</td>
+                <td>{{ data.answer }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div> -->
+
+        <div class="text-right lastActionBtn" *ngIf="!userInputData">
+            <button mat-flat-button color="primary" class="custBtn" (click)="goback()"><<Back</button>
+            <button mat-flat-button color="primary" class="custBtn" (click)="restart()">Restart</button>
+            <!-- <button mat-flat-button color="primary" class="custBtn" (click)="downloadReport()" data-toggle="modal">Download Report with Recommendations</button> -->
+            <button mat-flat-button color="primary" class="custBtn" (click)="downloadReport()">Download Report with Recommendations</button>
+            <!-- <button mat-flat-button color="primary" class="custBtn" (click)="downloadPFD()">Download</button> -->
+        </div>
+
+        <!-- The Modal -->
+        <div class="modal col-md-12" id="myModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Please provide the below information to receieve the report with recommendations</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <form #downloadForm="ngForm" (ngSubmit)="sendDownloadData(); downloadForm.resetForm()">
+                            <div class="form-group">
+                                <!--<label for="exampleInputPassword1">First Name:</label>-->
+                                <input type="text" class="form-control"
+                                       id="nameInput" placeholder="First Name" name="firstName" [(ngModel)]="formData.firstName" />
+                            </div>
+                            <div class="form-group">
+                                <!--<label for="exampleInputPassword1">Last Name:</label>-->
+                                <input type="text" class="form-control"
+                                       id="nameInput" placeholder="Last Name" name="lastName" [(ngModel)]="formData.lastName" />
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Company:</label>
+                                <input type="text" class="form-control"
+                                       id="nameInput" placeholder="Company" name="company" [(ngModel)]="formData.company" />
+                            </div>
+                            <div class="form-group">
+                                <!--<label for="exampleInputPassword1">Designation:</label>-->
+                                <input type="text" class="form-control"
+                                       id="nameInput" placeholder="Job Function" name="designation" [(ngModel)]="formData.designation" />
+                            </div>
+                            <div class="form-group">
+                                <!--<label for="exampleInputEmail1">Work Email:</label>-->
+                                <input type="email" class="form-control"
+                                       id="exampleInputEmail1" placeholder="Work Email" name="email" [(ngModel)]="formData.email" />
+                            </div>
+                            <div class="popUpButton">
+                                <button mat-flat-button class="custBtn" color="primary" (click)="sendDownloadData()">Submit</button>
+                            </div>
+
+                        </form>
+                    </div>
+
+                    <!-- Modal footer
+                    <div class="modal-footer">
+                        <button mat-flat-button color="primary" (click)="download()">Send</button>
+                    </div>-->
+
+                </div>
+            </div>
+        </div>
+
+    </mat-step>
+  </mat-horizontal-stepper>
+</div>
+<app-fingerprint-footer></app-fingerprint-footer>
+

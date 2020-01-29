@@ -1,0 +1,56 @@
+<div class="col-12 fingerprintreportHolder p-0 pb-5">
+  <nav class="logSection navbar navbar-expand-lg navbar-dark bg-dark fingerPrintHeader">
+      <div class="col-6">
+          <a class="navbar-brand" routerLink="/fingerprintreport"><img class="img-fluid" src="../../assets/img/logo1.png"/></a>
+      </div>
+      <div class="col-6 text-right pt-3">
+          <p class="mb-0">Email: contact@claribel.net</p>
+          <p class="mb-0"><a href="https://claribel.net/contact-us">https://claribel.net/contact-us</a></p>
+      </div>
+  </nav>
+  <div class="col-12">
+      <h5 class="text-justify pt-4">Thank you for taking time to perform NIST aligned Cyber Risk/Security posture assessment of your Organization by utilizing our FingerPrint tool.</h5>
+      <h3 class="text-center pt-3 pb-1 m-4"><strong>High Level Cyber Defense Dashboard</strong></h3>
+      <div class="fingerprintComponent graphMainContainer justify-content-center row">
+          <rg-gauge-chart *ngFor="let data of chartData" class="eachGraph" [ngStyle]="{'background-color': '#0e0e0e', 'background-image': 'linear-gradient(#0e0e0e, #463f3f, #0e0e0e)'}"
+          [canvasWidth]="canvasWidth"
+          [needleValue]="data.needleValue"
+          [centralLabel]="centralLabel"
+          [options]="options"
+          [name]="data.name"
+          [bottomLabel]="data.bottomLabel">
+          </rg-gauge-chart>
+      </div>
+  </div>
+  <div class="col-12 pb-3">
+      <h3 class="text-center pt-3 pb-3 m-4"><strong>Snapshot of your assessment responses</strong></h3>
+      <table class="table table-bordered">
+          <thead class="text-center">
+              <tr>
+                  <th>NIST Function</th>
+                  <th>Assessment Questions</th>
+                  <th>Response</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let data of unique | custpipe; let i = index">
+              <td>{{ data.screen }}</td>
+              <td>{{ data.question }}</td>
+              <td>{{ data.answer }}</td>
+              </tr>
+          </tbody>
+      </table>
+      <h4 class="text-center pt-3 pb-3">High level recommendations to enhance your Cybersecurity posture</h4>
+      <ul class="custrecommendation">
+          <li *ngFor="let data of highlevelrecommend; let i = index">{{i+1}}. {{ data.value }}</li>
+      </ul>
+      <h5 class="text-justify pt-3 pb-3">Please reach out to us for complete demo or to address any query you may have.</h5>
+  </div>
+  <div class="col-12 text-right">
+      <button mat-flat-button color="primary" class="custBtn" (click)="downloadPFD()" *ngIf="showDownload">Download</button>
+      <!-- <button mat-flat-button color="primary" class="custBtn" (click)="backfingerprint()" *ngIf="showfingerprint">Back to Fingerprint</button> -->
+  </div>
+  <div class="col-12 pt-3 footerCustom">
+      <p>Copyright &#169; 2019 Claribel - All Rights Reserved</p>
+  </div>
+</div>

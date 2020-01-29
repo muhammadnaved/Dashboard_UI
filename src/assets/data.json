@@ -1,0 +1,925 @@
+{
+	"data": [{
+		"screenType": "Identify",
+		"questions": [
+			{
+				"id": 1,
+				"value": "1. How frequently do you update the central inventory of the critical systems?",
+				"selectedAnswer": "",
+				"screenType": "Identify",
+				"weight": 0.2,
+				"answers": [
+          {
+            "id": 3,
+            "value": 1,
+            "option": "Within 24 hours of the environment change",
+            "createdAt": 1563519151000,
+            "updatedAt": 1563519151000
+          },
+          {
+            "id": 2,
+            "value": 0.66,
+            "option": "Within 1 week of the environment change",
+            "createdAt": 1563519151000,
+            "updatedAt": 1563519151000
+          },
+          {
+            "id": 1,
+            "value": 0.25,
+            "option": "Within 1 month of the environment change",
+            "createdAt": 1563519151000,
+            "updatedAt": 1563519151000
+          },
+          {
+            "id": 4,
+            "value": 0,
+            "option": "We do not maintain central inventory",
+            "createdAt": 1563519151000,
+            "updatedAt": 1563519151000
+          }
+				],
+				"createdAt": 1563519151000,
+				"updatedAt": 1563519151000
+			},
+      {
+        "id": 2,
+        "value": "2. Do you have documented and updated critical information assets inventory and process policy to maintain it?",
+        "selectedAnswer": "",
+        "screenType": "Identify",
+        "weight": 0.2,
+        "answers": [
+          {
+            "id": 5,
+            "value": 1,
+            "option": "Yes",
+            "createdAt": 1563519151000,
+            "updatedAt": 1563519151000
+          },
+          {
+            "id": 6,
+            "value": 0,
+            "option": "No",
+            "createdAt": 1563519151000,
+            "updatedAt": 1563519151000
+          }
+        ],
+        "createdAt": 1563519151000,
+        "updatedAt": 1563519151000
+      },
+      {
+        "id": 3,
+        "value": "3. Do you have documented and updated asset scanning technology, process and policies?",
+        "selectedAnswer": "",
+        "screenType": "Identify",
+        "weight": 0.2,
+        "answers": [
+          {
+            "id": 7,
+            "value": 1,
+            "option": "Yes",
+            "createdAt": 1563519151000,
+            "updatedAt": 1563519151000
+          },
+          {
+            "id": 8,
+            "value": 0,
+            "option": "No",
+            "createdAt": 1563519151000,
+            "updatedAt": 1563519151000
+          }
+        ],
+        "createdAt": 1563519151000,
+        "updatedAt": 1563519151000
+      },
+			{
+				"id": 4,
+				"value": "4. How frequently do you review your information security policies?",
+				"selectedAnswer": "",
+				"screenType": "Identify",
+				"weight": 0.2,
+				"answers": [
+					{
+						"id": 9,
+						"value": 1,
+						"option": "Annually",
+						"createdAt": 1563519151000,
+						"updatedAt": 1563519151000
+					},
+          {
+            "id": 10,
+            "value": 0.66,
+            "option": "Every 2 Years",
+            "createdAt": 1563519151000,
+            "updatedAt": 1563519151000
+          },
+          {
+            "id": 11,
+            "value": 0.25,
+            "option": "Ad-Hoc",
+            "createdAt": 1563519151000,
+            "updatedAt": 1563519151000
+          },
+					{
+						"id": 12,
+						"value": 0,
+            "option": "No reviews",
+						"createdAt": 1563519151000,
+						"updatedAt": 1563519151000
+					}
+				
+				],
+				"createdAt": 1563519151000,
+				"updatedAt": 1563519151000
+			},
+      {
+        "id": 5,
+        "value": "5. How frequently do you perform information security risk assessments?",
+        "selectedAnswer": "",
+        "screenType": "Identify",
+        "weight": 0.2,
+        "answers": [
+          {
+            "id": 13,
+            "value": 1,
+            "option": "Annually",
+            "createdAt": 1563519151000,
+            "updatedAt": 1563519151000
+          },
+          {
+            "id": 14,
+            "value": 0.66,
+            "option": "Every 2 Years",
+            "createdAt": 1563519151000,
+            "updatedAt": 1563519151000
+          },
+          {
+            "id": 15,
+            "value": 0.25,
+            "option": "Ad-Hoc",
+            "createdAt": 1563519151000,
+            "updatedAt": 1563519151000
+          },
+          {
+            "id": 16,
+            "value": 0,
+            "option": "No reviews",
+            "createdAt": 1563519151000,
+            "updatedAt": 1563519151000
+          }
+        ],
+        "createdAt": 1563519151000,
+        "updatedAt": 1563519151000
+      }
+		],
+		"selectedOption": null,
+		"gaugeValue": 0
+	},{
+		"screenType": "Protect",
+		"questions": [
+      {
+        "id": 1,
+        "value": "1. How do you protect your sensitive information?",
+        "selectedAnswer": "",
+        "screenType": "Identify",
+        "weight": 0.2,
+        "answers": [
+          {
+            "id": 3,
+            "value": 1,
+            "option": "Identify, Classify, Label, Protect",
+            "createdAt": 1563519151000,
+            "updatedAt": 1563519151000
+          },
+          {
+            "id": 2,
+            "value": 0.66,
+            "option": "Identify, Classify, Label",
+            "createdAt": 1563519151000,
+            "updatedAt": 1563519151000
+          },
+          {
+            "id": 1,
+            "value": 0.25,
+            "option": "Identify, Classify",
+            "createdAt": 1563519151000,
+            "updatedAt": 1563519151000
+          },
+          {
+            "id": 4,
+            "value": 0,
+            "option": "None of the above",
+            "createdAt": 1563519151000,
+            "updatedAt": 1563519151000
+          }
+        ],
+        "createdAt": 1563519151000,
+        "updatedAt": 1563519151000
+      },
+      {
+        "id": 2,
+        "value": "2. Do you prioritize the implementation of security controls based on criticality?",
+        "selectedAnswer": "",
+        "screenType": "Identify",
+        "weight": 0.2,
+        "answers": [
+          {
+            "id": 5,
+            "value": 1,
+            "option": "Yes, for all information assets",
+            "createdAt": 1563519151000,
+            "updatedAt": 1563519151000
+          },
+          {
+            "id": 6,
+            "value": 0.66,
+            "option": "Yes, for majority of information assets",
+            "createdAt": 1563519151000,
+            "updatedAt": 1563519151000
+          },
+          {
+            "id": 6,
+            "value": 0.25,
+            "option": "Yes, for some assets",
+            "createdAt": 1563519151000,
+            "updatedAt": 1563519151000
+          },
+          {
+            "id": 6,
+            "value": 0,
+            "option": "No",
+            "createdAt": 1563519151000,
+            "updatedAt": 1563519151000
+          }
+        ],
+        "createdAt": 1563519151000,
+        "updatedAt": 1563519151000
+      },
+      {
+        "id": 3,
+        "value": "3. How frequently do you review access entitlements and ownerships?",
+        "selectedAnswer": "",
+        "screenType": "Identify",
+        "weight": 0.2,
+        "answers": [
+          {
+            "id": 8,
+            "value": 1,
+            "option": "Every 6 months or less",
+            "createdAt": 1563519151000,
+            "updatedAt": 1563519151000
+          },
+          {
+            "id": 7,
+            "value": 0.66,
+            "option": "Annually",
+            "createdAt": 1563519151000,
+            "updatedAt": 1563519151000
+          },
+          {
+            "id": 8,
+            "value": 0.25,
+            "option": "Ad-Hoc",
+            "createdAt": 1563519151000,
+            "updatedAt": 1563519151000
+          },
+          {
+            "id": 8,
+            "value": 0,
+            "option": "No reviews",
+            "createdAt": 1563519151000,
+            "updatedAt": 1563519151000
+          }
+        ],
+        "createdAt": 1563519151000,
+        "updatedAt": 1563519151000
+      },
+      {
+        "id": 4,
+        "value": "4. Do you have remote access standards and monitoring?",
+        "selectedAnswer": "",
+        "screenType": "Identify",
+        "weight": 0.2,
+        "answers": [
+          {
+            "id": 9,
+            "value": 1,
+            "option": "No remote access allowed",
+            "createdAt": 1563519151000,
+            "updatedAt": 1563519151000
+          },
+          {
+            "id": 10,
+            "value": 0.66,
+            "option": "We have remote access Standards and continuous monitoring",
+            "createdAt": 1563519151000,
+            "updatedAt": 1563519151000
+          },
+          {
+            "id": 12,
+            "value": 0.25,
+            "option": "We have remote access Standards, but no continuous monitoring",
+            "createdAt": 1563519151000,
+            "updatedAt": 1563519151000
+          },
+          {
+            "id": 11,
+            "value": 0,
+            "option": "No",
+            "createdAt": 1563519151000,
+            "updatedAt": 1563519151000
+          }
+        ],
+        "createdAt": 1563519151000,
+        "updatedAt": 1563519151000
+      },
+      {
+        "id": 5,
+        "value": "5. Is cybersecurity part of your human resource practices and mandatory training?",
+        "selectedAnswer": "",
+        "screenType": "Identify",
+        "weight": 0.2,
+        "answers": [
+          {
+            "id": 13,
+            "value": 1,
+            "option": "Yes",
+            "createdAt": 1563519151000,
+            "updatedAt": 1563519151000
+          },
+          {
+            "id": 15,
+            "value": 0,
+            "option": "No",
+            "createdAt": 1563519151000,
+            "updatedAt": 1563519151000
+          }
+        ],
+        "createdAt": 1563519151000,
+        "updatedAt": 1563519151000
+      }
+		],
+		"selectedOption": null,
+		"gaugeValue": 0
+	},{
+		"screenType": "Detect",
+		"questions": [
+      {
+        "id": 1,
+        "value": "1. Do your policies require the centralized storage of logs for: A. Aggregation, B. Correlation, C. Analysis, D. Alert Management?",
+        "selectedAnswer": "",
+        "screenType": "Identify",
+        "weight": 0.2,
+        "answers": [
+          {
+            "id": 3,
+            "value": 1,
+            "option": "Yes, A through D",
+            "createdAt": 1563519151000,
+            "updatedAt": 1563519151000
+          },
+          {
+            "id": 2,
+            "value": 0.66,
+            "option": "Yes, A, C and D",
+            "createdAt": 1563519151000,
+            "updatedAt": 1563519151000
+          },
+          {
+            "id": 1,
+            "value": 0.25,
+            "option": "Yes, A and D",
+            "createdAt": 1563519151000,
+            "updatedAt": 1563519151000
+          },
+          {
+            "id": 4,
+            "value": 0,
+            "option": "No",
+            "createdAt": 1563519151000,
+            "updatedAt": 1563519151000
+          }
+        ],
+        "createdAt": 1563519151000,
+        "updatedAt": 1563519151000
+      },
+      {
+        "id": 2,
+        "value": "2. How frequently do you update your baseline configuration of hardware and software?",
+        "selectedAnswer": "",
+        "screenType": "Identify",
+        "weight": 0.2,
+        "answers": [
+          {
+            "id": 5,
+            "value": 1,
+            "option": "Every 6 months",
+            "createdAt": 1563519151000,
+            "updatedAt": 1563519151000
+          },
+          {
+            "id": 6,
+            "value": 0.66,
+            "option": "Annually",
+            "createdAt": 1563519151000,
+            "updatedAt": 1563519151000
+          },
+          {
+            "id": 5,
+            "value": 0.25,
+            "option": "Ad-Hoc",
+            "createdAt": 1563519151000,
+            "updatedAt": 1563519151000
+          },
+          {
+            "id": 5,
+            "value": 0,
+            "option": "No reviews",
+            "createdAt": 1563519151000,
+            "updatedAt": 1563519151000
+          }
+        ],
+        "createdAt": 1563519151000,
+        "updatedAt": 1563519151000
+      },
+      {
+        "id": 3,
+        "value": "3. Do you have any of the following networking controls implemented?",
+        "selectedAnswer": "",
+        "screenType": "Identify",
+        "weight": 0.2,
+        "answers": [
+          {
+            "id": 8,
+            "value": 1,
+            "option": "Full Network Segmentation",
+            "createdAt": 1563519151000,
+            "updatedAt": 1563519151000
+          },
+          {
+            "id": 7,
+            "value": 0.66,
+            "option": "Security Zone",
+            "createdAt": 1563519151000,
+            "updatedAt": 1563519151000
+          },
+          {
+            "id": 7,
+            "value": 0.25,
+            "option": "Logical separation for production vs development environment",
+            "createdAt": 1563519151000,
+            "updatedAt": 1563519151000
+          },
+          {
+            "id": 7,
+            "value": 0,
+            "option": "None of the above",
+            "createdAt": 1563519151000,
+            "updatedAt": 1563519151000
+          }
+        ],
+        "createdAt": 1563519151000,
+        "updatedAt": 1563519151000
+      },
+      {
+        "id": 4,
+        "value": "4. How effective is your vulnerability management program?",
+        "selectedAnswer": "",
+        "screenType": "Identify",
+        "weight": 0.2,
+        "answers": [
+          {
+            "id": 9,
+            "value": 1,
+            "option": "Fully functional, staffed and supported",
+            "createdAt": 1563519151000,
+            "updatedAt": 1563519151000
+          },
+          {
+            "id": 10,
+            "value": 0.66,
+            "option": "Mostly functional, staffed and supported",
+            "createdAt": 1563519151000,
+            "updatedAt": 1563519151000
+          },
+          {
+            "id": 12,
+            "value": 0.25,
+            "option": "Partially functional, staffed and supported",
+            "createdAt": 1563519151000,
+            "updatedAt": 1563519151000
+          },
+          {
+            "id": 11,
+            "value": 0,
+            "option": "None of the above",
+            "createdAt": 1563519151000,
+            "updatedAt": 1563519151000
+          }
+        ],
+        "createdAt": 1563519151000,
+        "updatedAt": 1563519151000
+      },
+      {
+        "id": 5,
+        "value": "5. Do you categorize security incidents by type such as human errors, false positive, priority incident?",
+        "selectedAnswer": "",
+        "screenType": "Identify",
+        "weight": 0.2,
+        "answers": [
+          {
+            "id": 13,
+            "value": 1,
+            "option": "Yes",
+            "createdAt": 1563519151000,
+            "updatedAt": 1563519151000
+          },
+          {
+            "id": 15,
+            "value": 0,
+            "option": "No",
+            "createdAt": 1563519151000,
+            "updatedAt": 1563519151000
+          }
+        ],
+        "createdAt": 1563519151000,
+        "updatedAt": 1563519151000
+      }
+		],
+		"selectedOption": null,
+		"gaugeValue": 0
+	},{
+		"screenType": "Respond",
+    "questions": [
+      {
+        "id": 1,
+        "value": "1. How frequently do you update risk protection plans, e.g., BCP, IRP, DRP?",
+        "selectedAnswer": "",
+        "screenType": "Identify",
+        "weight": 0.2,
+        "answers": [
+          {
+            "id": 13,
+            "value": 1,
+            "option": "Annually",
+            "createdAt": 1563519151000,
+            "updatedAt": 1563519151000
+          },
+          {
+            "id": 15,
+            "value": 0.66,
+            "option": "Every 2 Years",
+            "createdAt": 1563519151000,
+            "updatedAt": 1563519151000
+          },
+          {
+            "id": 15,
+            "value": 0.25,
+            "option": "Ad-Hoc",
+            "createdAt": 1563519151000,
+            "updatedAt": 1563519151000
+          },
+          {
+            "id": 15,
+            "value": 0,
+            "option": "No reviews",
+            "createdAt": 1563519151000,
+            "updatedAt": 1563519151000
+          }
+        ],
+        "createdAt": 1563519151000,
+        "updatedAt": 1563519151000
+      },
+      {
+        "id": 2,
+        "value": "2. Do you have defined risk tolerance policy and threshold for each business units?",
+        "selectedAnswer": "",
+        "screenType": "Identify",
+        "weight": 0.2,
+        "answers": [
+          {
+            "id": 5,
+            "value": 1,
+            "option": "Yes, for all Business Units",
+            "createdAt": 1563519151000,
+            "updatedAt": 1563519151000
+          },
+          {
+            "id": 6,
+            "value": 0.66,
+            "option": "Yes, for Critical Business Units",
+            "createdAt": 1563519151000,
+            "updatedAt": 1563519151000
+          },
+          {
+            "id": 5,
+            "value": 0.25,
+            "option": "Yes, for few Business Units",
+            "createdAt": 1563519151000,
+            "updatedAt": 1563519151000
+          },
+          {
+            "id": 5,
+            "value": 0,
+            "option": "No",
+            "createdAt": 1563519151000,
+            "updatedAt": 1563519151000
+          }
+        ],
+        "createdAt": 1563519151000,
+        "updatedAt": 1563519151000
+      },
+      {
+        "id": 3,
+        "value": "3. Do you have defined risk tolerance policy and thresholds for each business unit?",
+        "selectedAnswer": "",
+        "screenType": "Identify",
+        "weight": 0.2,
+        "answers": [
+          {
+            "id": 8,
+            "value": 1,
+            "option": "Yes, for all Business Units",
+            "createdAt": 1563519151000,
+            "updatedAt": 1563519151000
+          },
+          {
+            "id": 7,
+            "value": 0.66,
+            "option": "Yes, for critical Business Units",
+            "createdAt": 1563519151000,
+            "updatedAt": 1563519151000
+          },
+          {
+            "id": 7,
+            "value": 0.25,
+            "option": "Yes, for few Business Units",
+            "createdAt": 1563519151000,
+            "updatedAt": 1563519151000
+          },
+          {
+            "id": 7,
+            "value": 0,
+            "option": "No",
+            "createdAt": 1563519151000,
+            "updatedAt": 1563519151000
+          }
+        ],
+        "createdAt": 1563519151000,
+        "updatedAt": 1563519151000
+      },
+      {
+        "id": 4,
+        "value": "4. How frequent is your incident response table-top exercise?",
+        "selectedAnswer": "",
+        "screenType": "Identify",
+        "weight": 0.2,
+        "answers": [
+          {
+            "id": 9,
+            "value": 1,
+            "option": "Every 6 months",
+            "createdAt": 1563519151000,
+            "updatedAt": 1563519151000
+          },
+          {
+            "id": 10,
+            "value": 0.66,
+            "option": "Annually",
+            "createdAt": 1563519151000,
+            "updatedAt": 1563519151000
+          },
+          {
+            "id": 12,
+            "value": 0.25,
+            "option": "Ad-Hoc",
+            "createdAt": 1563519151000,
+            "updatedAt": 1563519151000
+          },
+          {
+            "id": 11,
+            "value": 0,
+            "option": "No reviews",
+            "createdAt": 1563519151000,
+            "updatedAt": 1563519151000
+          }
+        ],
+        "createdAt": 1563519151000,
+        "updatedAt": 1563519151000
+      },
+      {
+        "id": 5,
+        "value": "5. Do you have a fully established Business Continuity Planning (BCP) processes?",
+        "selectedAnswer": "",
+        "screenType": "Identify",
+        "weight": 0.2,
+        "answers": [
+          {
+            "id": 5,
+            "value": 1,
+            "option": "Yes, for all Business Units",
+            "createdAt": 1563519151000,
+            "updatedAt": 1563519151000
+          },
+          {
+            "id": 6,
+            "value": 0.66,
+            "option": "Yes, for Critical Business Units",
+            "createdAt": 1563519151000,
+            "updatedAt": 1563519151000
+          },
+          {
+            "id": 5,
+            "value": 0.25,
+            "option": "Yes, for few Business Units",
+            "createdAt": 1563519151000,
+            "updatedAt": 1563519151000
+          },
+          {
+            "id": 5,
+            "value": 0,
+            "option": "No",
+            "createdAt": 1563519151000,
+            "updatedAt": 1563519151000
+          }
+        ],
+        "createdAt": 1563519151000,
+        "updatedAt": 1563519151000
+      }
+    ],
+		"selectedOption": null,
+		"gaugeValue": 0
+	},{
+		"screenType": "Recover",
+		"questions": [
+      {
+        "id": 1,
+        "value": "1. Do you analyze the effectiveness of your organization's security training?",
+        "selectedAnswer": "",
+        "screenType": "Identify",
+        "weight": 0.2,
+        "answers": [
+          {
+            "id": 3,
+            "value": 1,
+            "option": "Yes",
+            "createdAt": 1563519151000,
+            "updatedAt": 1563519151000
+          },
+          {
+            "id": 2,
+            "value": 0,
+            "option": "No",
+            "createdAt": 1563519151000,
+            "updatedAt": 1563519151000
+          }
+        ],
+        "createdAt": 1563519151000,
+        "updatedAt": 1563519151000
+      },
+      {
+        "id": 2,
+        "value": "2. Do you have a fully established capacity planning process?",
+        "selectedAnswer": "",
+        "screenType": "Identify",
+        "weight": 0.2,
+        "answers": [
+          {
+            "id": 5,
+            "value": 1,
+            "option": "Yes, for all Assets",
+            "createdAt": 1563519151000,
+            "updatedAt": 1563519151000
+          },
+          {
+            "id": 6,
+            "value": 0.66,
+            "option": "Yes, for Critical Assets",
+            "createdAt": 1563519151000,
+            "updatedAt": 1563519151000
+          },
+          {
+            "id": 6,
+            "value": 0.25,
+            "option": "Yes, for few Assets",
+            "createdAt": 1563519151000,
+            "updatedAt": 1563519151000
+          },
+          {
+            "id": 6,
+            "value": 0,
+            "option": "No",
+            "createdAt": 1563519151000,
+            "updatedAt": 1563519151000
+          }
+        ],
+        "createdAt": 1563519151000,
+        "updatedAt": 1563519151000
+      },
+      {
+        "id": 3,
+        "value": "3. How frequently do you review response and recovery plans?",
+        "selectedAnswer": "",
+        "screenType": "Identify",
+        "weight": 0.2,
+        "answers": [
+          {
+            "id": 5,
+            "value": 1,
+            "option": "Every 6 months",
+            "createdAt": 1563519151000,
+            "updatedAt": 1563519151000
+          },
+          {
+            "id": 6,
+            "value": 0.66,
+            "option": "Annually",
+            "createdAt": 1563519151000,
+            "updatedAt": 1563519151000
+          },
+          {
+            "id": 5,
+            "value": 0.25,
+            "option": "Ad-Hoc",
+            "createdAt": 1563519151000,
+            "updatedAt": 1563519151000
+          },
+          {
+            "id": 5,
+            "value": 0,
+            "option": "No reviews",
+            "createdAt": 1563519151000,
+            "updatedAt": 1563519151000
+          }
+        ],
+        "createdAt": 1563519151000,
+        "updatedAt": 1563519151000
+      },
+      {
+        "id": 4,
+        "value": "4. How frequently do you review critical facilities' operating environment?",
+        "selectedAnswer": "",
+        "screenType": "Identify",
+        "weight": 0.2,
+        "answers": [
+          {
+            "id": 9,
+            "value": 1,
+            "option": "Annually",
+            "createdAt": 1563519151000,
+            "updatedAt": 1563519151000
+          },
+          {
+            "id": 10,
+            "value": 0.66,
+            "option": "Every 2 Years",
+            "createdAt": 1563519151000,
+            "updatedAt": 1563519151000
+          },
+          {
+            "id": 11,
+            "value": 0.25,
+            "option": "Ad-Hoc",
+            "createdAt": 1563519151000,
+            "updatedAt": 1563519151000
+          },
+          {
+            "id": 12,
+            "value": 0,
+            "option": "No reviews",
+            "createdAt": 1563519151000,
+            "updatedAt": 1563519151000
+          }
+        ],
+        "createdAt": 1563519151000,
+        "updatedAt": 1563519151000
+      },
+      {
+        "id": 5,
+        "value": "5. Do you have a fully established procurement process with contingency plans?",
+        "selectedAnswer": "",
+        "screenType": "Identify",
+        "weight": 0.2,
+        "answers": [
+          {
+            "id": 13,
+            "value": 1,
+            "option": "Yes",
+            "createdAt": 1563519151000,
+            "updatedAt": 1563519151000
+          },
+          {
+            "id": 15,
+            "value": 0,
+            "option": "No",
+            "createdAt": 1563519151000,
+            "updatedAt": 1563519151000
+          }
+        ],
+        "createdAt": 1563519151000,
+        "updatedAt": 1563519151000
+      }
+		],
+		"selectedOption": null,
+		"gaugeValue": 0
+	}]
+}

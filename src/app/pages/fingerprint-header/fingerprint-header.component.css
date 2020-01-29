@@ -1,0 +1,4 @@
+.fingerPrintHeader img{width:139px;}
+.fingerPrintHeader{background: #000 !important; color:#fff; font-weight: normal; font-size: 14px; padding: 0px 20px;}
+.footer{position: fixed; bottom: 0;}
+.headerLink {text-transform: uppercase; cursor: pointer; overflow-wrap: break-word; font-family: Montserrat, arial, sans-serif; letter-spacing: normal;}
