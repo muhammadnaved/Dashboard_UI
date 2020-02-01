@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import * as jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 import { Router, RouterModule } from '@angular/router';
@@ -33,6 +33,7 @@ export class FingerprintReportComponent implements OnInit {
   showDownload:boolean;
   showfingerprint:boolean;
   highlevelrecommend;
+  recommended:any = [];
 
   ngOnInit() {
     this.screenwidth = (window.screen.width - 30)/5 - 12.2;
@@ -41,7 +42,9 @@ export class FingerprintReportComponent implements OnInit {
     console.log(this.canvasWidth);
     this.chartData = JSON.parse(sessionStorage.chartData);
     this.unique = JSON.parse(sessionStorage.unique);
+    console.log(this.unique);    
     this.showDownload = true;
+    this.getRecomended();
     this.showfingerprint = false;
     this.highlevelrecommend = [
       {'value' : 'Organization should implement centralized IAM solutions'},
@@ -51,6 +54,16 @@ export class FingerprintReportComponent implements OnInit {
     ]
   }
 
+  getRecomended(){
+    for(var i=0; this.unique.length; i++){
+      console.log(this.unique[i].recommededOption); 
+      if(this.unique[i].recommededOption != " "){
+        this.recommended.push(this.unique[i].recommededOption);
+      }
+    }
+    console.log(this.recommended);
+  }
+  
   downloadPFD(){
     this.showDownload = false;
     setTimeout(function(){
