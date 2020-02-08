@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit, AfterViewInit} from '@angular/core';
 import * as jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 import { Router, RouterModule } from '@angular/router';
@@ -9,7 +9,7 @@ import { MatSnackBar, MatSnackBarVerticalPosition } from '@angular/material';
   templateUrl: './fingerprint-report.component.html',
   styleUrls: ['./fingerprint-report.component.css']
 })
-export class FingerprintReportComponent implements OnInit {
+export class FingerprintReportComponent implements OnInit, AfterViewInit {
 
   constructor(private router: Router, public snackBar: MatSnackBar) { }
 
@@ -34,6 +34,7 @@ export class FingerprintReportComponent implements OnInit {
   showfingerprint:boolean;
   highlevelrecommend;
   recommended:any = [];
+  data: any = [];
 
   ngOnInit() {
     this.screenwidth = (window.screen.width - 30)/5 - 12.2;
@@ -42,10 +43,12 @@ export class FingerprintReportComponent implements OnInit {
     console.log(this.canvasWidth);
     this.chartData = JSON.parse(sessionStorage.chartData);
     this.unique = JSON.parse(sessionStorage.unique);
-    console.log(this.unique);    
+    console.log(this.unique);
     this.showDownload = true;
-    this.getRecomended();
     this.showfingerprint = false;
+    this.data = JSON.parse(sessionStorage.unique);
+    this.recommended = JSON.parse(sessionStorage.recomend);
+    //this.getRecomended(this.unique);
     this.highlevelrecommend = [
       {'value' : 'Organization should implement centralized IAM solutions'},
       {'value' : 'Organization should implement CMDB'},
@@ -54,16 +57,26 @@ export class FingerprintReportComponent implements OnInit {
     ]
   }
 
-  getRecomended(){
-    for(var i=0; this.unique.length; i++){
-      console.log(this.unique[i].recommededOption); 
-      if(this.unique[i].recommededOption != " "){
-        this.recommended.push(this.unique[i].recommededOption);
-      }
+  ngAfterViewInit(){
+    // this.chartData = JSON.parse(sessionStorage.chartData);
+    // this.unique = JSON.parse(sessionStorage.unique);
+    // console.log(this.unique);
+    // this.getRecomended();
+  }
+
+
+
+  getRecomended(data){
+    var mydata = data;
+    for(var i=0; mydata.length; i++){
+      console.log(mydata[i]);
+      // if(data[i].recommededOption != " "){
+      //   this.recommended.push(data[i].recommededOption);
+      // }
     }
     console.log(this.recommended);
   }
-  
+
   downloadPFD(){
     this.showDownload = false;
     setTimeout(function(){

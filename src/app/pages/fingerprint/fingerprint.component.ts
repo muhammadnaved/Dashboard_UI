@@ -112,7 +112,9 @@ export class FingerprintComponent implements OnInit {
 
 	finalAnswers: any = [];
 
-	unique: any = [];
+  unique: any = [];
+
+  recomend: any = [];
 
 
 	onClickSubmit(data){
@@ -294,7 +296,16 @@ export class FingerprintComponent implements OnInit {
             this.service.validateOTPService(optJson).subscribe(
                 (res) => {
                     if (res == true) {
-                        this.router.navigate(['./fingerprintreport']);
+                      var data = JSON.parse(sessionStorage.unique);
+                      for (var i=0; i< data.length; i++){
+                        //console.log(data[i].recommededOption);
+                        if(data[i].recommededOption != " "){
+                          console.log(data[i].recommededOption);
+                          this.recomend.push(data[i].recommededOption);
+                        }
+                      }
+                      sessionStorage.setItem('recomend', JSON.stringify(this.recomend));
+                      this.router.navigate(['./fingerprintreport']);
                     } else {
                         this.getotp()
                         alert('Incorrect OTP. Please try again');
