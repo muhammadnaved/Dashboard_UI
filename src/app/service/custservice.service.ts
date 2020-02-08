@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 export class CustserviceService {
 
   private fingerprintUrl = "../assets/data1.json";
-  //private fingerprintUrl = "https://3.16.15.0:8443/claribel/api/fingerprint/question "
+  //private fingerprintUrl = "https://3.16.15.0:8443/claribel/api/fingerprint/question";
 
   // private url = "http://ec2-18-219-216-242.us-east-2.compute.amazonaws.com:8080/claribel/api/mail/send";
 
