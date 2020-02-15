@@ -24,7 +24,7 @@ const routes: Routes = [
           "./layouts/admin-layout/admin-layout.module#AdminLayoutModule"
       }
     ]
-  }, 
+  },
   {
     path: '',
     component: AuthLayoutComponent,
@@ -37,7 +37,7 @@ const routes: Routes = [
   },
   {path: 'fingerprint', component: FingerprintComponent},
   {path: 'fingerprintreport', component: FingerprintReportComponent}
-  
+
 ];
 
 @NgModule({
