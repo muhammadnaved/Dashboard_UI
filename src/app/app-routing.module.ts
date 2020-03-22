@@ -5,8 +5,6 @@ import { Routes, RouterModule } from "@angular/router";
 
 import { AdminLayoutComponent } from "./layouts/admin-layout/admin-layout.component";
 import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
-import { FingerprintComponent } from './pages/fingerprint/fingerprint.component';
-import { FingerprintReportComponent } from './pages/fingerprint-report/fingerprint-report.component';
 
 const routes: Routes = [
   {
@@ -24,8 +22,7 @@ const routes: Routes = [
           "./layouts/admin-layout/admin-layout.module#AdminLayoutModule"
       }
     ]
-  },
-  {
+  }, {
     path: '',
     component: AuthLayoutComponent,
     children: [
@@ -35,9 +32,10 @@ const routes: Routes = [
       }
     ]
   },
-  {path: 'fingerprint', component: FingerprintComponent},
-  {path: 'fingerprintreport', component: FingerprintReportComponent}
-
+  {
+    path: "**",
+    redirectTo: "dashboard"
+  }
 ];
 
 @NgModule({

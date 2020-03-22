@@ -28,24 +28,5 @@ $black-dashboard-angular-theme: mat-light-theme($black-dashboard-angular-primary
 
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; font-size:14px;}
+html, body { height: 100%; }
 body { margin: 0; font-family: "Arial", "Calibri", Roboto, "Helvetica Neue", sans-serif; }
-
-.gauge-chart .gauge-chart__label{font-weight:normal !important; font-size:12px !important;}
-.mat-step-header, .mat-stepper-horizontal-line{display:none !important;}
-.fingerPrintHeader{background: #000 !important; color:#fff; font-weight: normal; font-size: 14px; padding: 0px 20px;}
-.fingerLinks ul{list-style: none !important; margin-top:15px;}
-.fingerLinks ul li{display: inline-block;  padding: 0px 20px 0px 0px;}
-.fingerLinks ul li:last-child{ padding-right: 0px;}
-.fingerLinks ul li a{color:#fff !important;}
-.fingerprintStepper .mat-horizontal-content-container {background: #eae6e6; padding-top: 25px;}
-.questionForm {margin-top:15px;}
-.questionForm .form-group {background: #212529bd; color: #fff; padding: 4px 18px; border-radius: 5px; margin-top: 0px;}
-
-.footer{background: #000; color: #fff; font-size: 12px; padding: 20px 40px 15px;}
-.footer p{margin-bottom: 0px;}
-
-.mat-horizontal-content-container{padding: 0px !important;}
-
-.mat-dialog-container{padding:0px !important; overflow-x: hidden !important;}
-.mat-dialog-title{background: #000; color: #fff; padding: 10px 15px;}
