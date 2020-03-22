@@ -1,6 +1,6 @@
 <div mat-dialog-title>
   <div class="row">
-      <h6 class="col-10 matTitleName">Please provide the below information to receieve the report with recommendations</h6>
+      <h6 class="col-10 matTitleName">{{ modelTitle | titlecase}}</h6>
       <div class="col-2 text-right">
           <i class="fa fa-times close-icon" aria-hidden="true" (click)="closeDialog()" matTooltip="Close"></i>
       </div>

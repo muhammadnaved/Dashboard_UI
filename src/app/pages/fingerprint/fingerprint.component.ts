@@ -21,7 +21,7 @@ export class FingerprintComponent implements OnInit {
 	counter = 0;
 	chartData: any = [];
 	tabtitle = "";
-	questions;
+	questions: any = [];
 	fingerData: any = {};
 	fingerData1: any = {};
 	fingerData2: any = {};
@@ -76,7 +76,7 @@ export class FingerprintComponent implements OnInit {
 				"options": [{"needleStartValue" : 0}]
 			},{
 				"needleValue": 0,
-				"name": "Respond",
+				"name": "Response",
 				"bottomLabel": '0',
 				"options": [{"needleStartValue" : 0}]
 			},{
@@ -100,18 +100,21 @@ export class FingerprintComponent implements OnInit {
 	getQuestion(title){
 		this.service.getFingerprintQuestion()
 		.subscribe((res: any) => {
-			for(var i=0; i<res.data.length; i++){
-				if(res.data[i].screenType == title){
-					this.questions = res.data[i].questions;
+      this.questions = [];
+			for(var i=0; i<res.length; i++){
+				if(res[i].screenType == title){
+					this.questions.push(res[i]);
 				}
 			}
-		});
+    });
 	}
 
 
 	finalAnswers: any = [];
 
-	unique: any = [];
+  unique: any = [];
+
+  recomend: any = [];
 
 
 	onClickSubmit(data){
@@ -127,16 +130,16 @@ export class FingerprintComponent implements OnInit {
 		for(var key in data){
 			if(data.hasOwnProperty(key)){
 			let answer = data[key].split(';');
-			formData.push({'value': key, 'selectedValue': answer[0], 'selectedAnswer': answer[1], 'screenType': this.tabtitle, 'prevSelectedIndex': this.prevtabtitle, 'selectedIndex': this.selectedIndex, 'prevSelected' : this.prevSelectedIndex});
+			formData.push({'value': key, 'selectedValue': answer[0], 'selectedAnswer': answer[1], 'recommededOption': answer[2], 'screenType': this.tabtitle, 'prevSelectedIndex': this.prevtabtitle, 'selectedIndex': this.selectedIndex, 'prevSelected' : this.prevSelectedIndex});
 			}
 		}
 
 		console.log(formData);
 
 		for(i=0; i< formData.length; i++){
-			let question = formData[i].value.split('.')
+			let question = formData[i].value;
 			console.log({'question' : formData[i].value, 'answer' : formData[i].selectedAnswer, 'screen': formData[i].prevSelected});
-			this.finalAnswers.unshift({'question' : question[1], 'answer' : formData[i].selectedAnswer, 'screen': formData[i].prevSelected});
+			this.finalAnswers.unshift({'question' : question, 'answer' : formData[i].selectedAnswer, 'screen': formData[i].prevSelected, 'recommededOption': formData[i].recommededOption});
 		}
 		//this.finalAnswers.push(formData);
 
@@ -183,15 +186,15 @@ export class FingerprintComponent implements OnInit {
 		for(var key in data){
 			if(data.hasOwnProperty(key)){
 				let answer = data[key].split(';');
-				formData.push({'value': key, 'selectedValue': answer[0], 'selectedAnswer': answer[1], 'screenType': this.tabtitle, 'prevSelectedIndex': this.prevtabtitle, 'selectedIndex': this.selectedIndex, 'prevSelected' : this.prevSelectedIndex});
+				formData.push({'value': key, 'selectedValue': answer[0], 'selectedAnswer': answer[1], 'recommededOption': answer[2], 'screenType': this.tabtitle, 'prevSelectedIndex': this.prevtabtitle, 'selectedIndex': this.selectedIndex, 'prevSelected' : this.prevSelectedIndex});
 			}
 		}
 		console.log(formData);
 
 		for(i=0; i< formData.length; i++){
-			let question = formData[i].value.split('.');
+			let question = formData[i].value;
 			console.log({'question' : formData[i].value, 'answer' : formData[i].selectedAnswer, 'screen': formData[i].prevSelected});
-			this.finalAnswers.unshift({'question' : question[1], 'answer' : formData[i].selectedAnswer, 'screen': formData[i].screenType})
+			this.finalAnswers.unshift({'question' : question, 'answer' : formData[i].selectedAnswer, 'screen': formData[i].screenType, 'recommededOption': formData[i].recommededOption})
 		}
 
 		//this.finalAnswers.push(formData);
@@ -293,7 +296,16 @@ export class FingerprintComponent implements OnInit {
             this.service.validateOTPService(optJson).subscribe(
                 (res) => {
                     if (res == true) {
-                        this.router.navigate(['./fingerprintreport']);
+                      var data = JSON.parse(sessionStorage.unique);
+                      for (var i=0; i< data.length; i++){
+                        //console.log(data[i].recommededOption);
+                        if(data[i].recommededOption != " "){
+                          console.log(data[i].recommededOption);
+                          this.recomend.push(data[i].recommededOption);
+                        }
+                      }
+                      sessionStorage.setItem('recomend', JSON.stringify(this.recomend));
+                      this.router.navigate(['./fingerprintreport']);
                     } else {
                         this.getotp()
                         alert('Incorrect OTP. Please try again');

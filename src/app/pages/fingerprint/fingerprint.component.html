@@ -33,9 +33,9 @@
           <form class="questionForm" (ngSubmit)="onClickSubmit(fingerData)" #questForm="ngForm">
               <div class="form-group col-md-12" *ngFor="let question of questions">
               <div class="row">
-                  <label for="sel1" class="col-md-8">{{ question.value }}</label>
-                  <select class="form-control col-md-4" id="sel1" [(ngModel)]="fingerData[question.value]" name="{{ question.value }}">
-                  <option *ngFor="let option of question.answers; let i = index" value="{{ option.value * question.weight }} ; {{ option.option }}">{{ option.option }}</option>
+                  <label for="sel1" class="col-md-8">{{ question.question }}</label>
+                  <select class="form-control col-md-4" id="sel1" [(ngModel)]="fingerData[question.question]" name="{{ question.question }}">
+                  <option *ngFor="let option of question.answers; let i = index" value="{{ option.value * question.weight }} ; {{ option.option }} ; {{ option.recommededOption }}">{{ option.option }}</option>
                   </select>
               </div>
               </div>
@@ -77,9 +77,9 @@
             <form class="questionForm" (ngSubmit)="onClickSubmit(fingerData1)" #questForm="ngForm">
               <div class="form-group col-md-12" *ngFor="let question of questions">
                 <div class="row">
-                  <label for="sel1" class="col-md-8">{{ question.value }}</label>
-                  <select class="form-control col-md-4" id="sel1" [(ngModel)]="fingerData1[question.value]" name="{{ question.value }}">
-                    <option *ngFor="let option of question.answers; let i = index" value="{{ option.value * question.weight }} ; {{ option.option }}">{{ option.option }}</option>
+                  <label for="sel1" class="col-md-8">{{ question.question }}</label>
+                  <select class="form-control col-md-4" id="sel1" [(ngModel)]="fingerData1[question.question]" name="{{ question.question }}">
+                    <option *ngFor="let option of question.answers; let i = index" value="{{ option.value * question.weight }} ; {{ option.option }} ; {{ option.recommededOption }}">{{ option.option }}</option>
                   </select>
                 </div>
               </div>
@@ -114,9 +114,9 @@
             <form class="questionForm" (ngSubmit)="onClickSubmit(fingerData2)" #questForm="ngForm">
               <div class="form-group col-md-12" *ngFor="let question of questions">
                 <div class="row">
-                  <label for="sel1" class="col-md-8">{{ question.value }}</label>
-                  <select class="form-control col-md-4" id="sel1" [(ngModel)]="fingerData2[question.value]" name="{{ question.value }}">
-                    <option *ngFor="let option of question.answers; let i = index" value="{{ option.value * question.weight }} ; {{ option.option }}">{{ option.option }}</option>
+                  <label for="sel1" class="col-md-8">{{ question.question }}</label>
+                  <select class="form-control col-md-4" id="sel1" [(ngModel)]="fingerData2[question.question]" name="{{ question.question }}">
+                    <option *ngFor="let option of question.answers; let i = index" value="{{ option.value * question.weight }} ; {{ option.option }} ; {{ option.recommededOption }}">{{ option.option }}</option>
                   </select>
                 </div>
               </div>
@@ -130,10 +130,10 @@
       </div>
     </mat-step>
 
-    <mat-step label="Respond">
+    <mat-step label="Response">
       <div class="col-12">
         <div class="fingerprintComponent graphMainContainer justify-content-center row">
-            <rg-gauge-chart *ngFor="let data of chartData" class="eachGraph" [ngStyle]="{'background-color': data.name === 'Respond' ? '#0e0e0e' : '#505050', 'background-image': data.name === 'Respond' ? 'linear-gradient(#0e0e0e, #463f3f, #0e0e0e)' : 'linear-gradient(#505050, #8e8b8b, #505050)'}"
+            <rg-gauge-chart *ngFor="let data of chartData" class="eachGraph" [ngStyle]="{'background-color': data.name === 'Response' ? '#0e0e0e' : '#505050', 'background-image': data.name === 'Response' ? 'linear-gradient(#0e0e0e, #463f3f, #0e0e0e)' : 'linear-gradient(#505050, #8e8b8b, #505050)'}"
             [canvasWidth]="canvasWidth"
             [needleValue]="data.needleValue"
             [centralLabel]="centralLabel"
@@ -151,9 +151,9 @@
             <form class="questionForm" (ngSubmit)="onClickSubmit(fingerData3)" #questForm="ngForm">
               <div class="form-group col-md-12" *ngFor="let question of questions">
                 <div class="row">
-                  <label for="sel1" class="col-md-8">{{ question.value }}</label>
-                  <select class="form-control col-md-4" id="sel1" [(ngModel)]="fingerData3[question.value]" name="{{ question.value }}">
-                    <option *ngFor="let option of question.answers; let i = index" value="{{ option.value * question.weight }} ; {{ option.option }}">{{ option.option }}</option>
+                  <label for="sel1" class="col-md-8">{{ question.question }}</label>
+                  <select class="form-control col-md-4" id="sel1" [(ngModel)]="fingerData3[question.question]" name="{{ question.question }}">
+                    <option *ngFor="let option of question.answers; let i = index" value="{{ option.value * question.weight }} ; {{ option.option }} ; {{ option.recommededOption }}">{{ option.option }}</option>
                   </select>
                 </div>
               </div>
@@ -199,9 +199,9 @@
                     <form class="questionForm" (ngSubmit)="onClickSubmit1(fingerData4)" #questForm="ngForm">
                         <div class="form-group col-md-12" *ngFor="let question of questions">
                             <div class="row">
-                                <label for="sel1" class="col-md-8">{{ question.value }}</label>
-                                <select class="form-control col-md-4" id="sel1" [(ngModel)]="fingerData4[question.value]" name="{{ question.value }}">
-                                    <option *ngFor="let option of question.answers; let i = index" value="{{ option.value * question.weight }} ; {{ option.option }}">{{ option.option }}</option>
+                                <label for="sel1" class="col-md-8">{{ question.question }}</label>
+                                <select class="form-control col-md-4" id="sel1" [(ngModel)]="fingerData4[question.question]" name="{{ question.question }}">
+                                    <option *ngFor="let option of question.answers; let i = index" value="{{ option.value * question.weight }} ; {{ option.option }} ; {{ option.recommededOption }}">{{ option.option }}</option>
                                 </select>
                             </div>
                         </div>

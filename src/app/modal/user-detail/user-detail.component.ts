@@ -12,6 +12,8 @@ export class UserDetailComponent implements OnInit {
 
   formData:any = {};
 
+  modelTitle: string = "Please provide the below information to receieve the report with recommendations"
+
   ngOnInit() {
   }
 

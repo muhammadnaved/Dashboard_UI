@@ -10,6 +10,8 @@ import { MatDatepickerModule} from '@angular/material/datepicker';
 import { MatRadioModule, MAT_RADIO_DEFAULT_OPTIONS} from '@angular/material/radio';
 import { SatDatepickerModule, SatNativeDateModule} from 'saturn-datepicker';
 
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+
 import { AppComponent } from "./app.component";
 import { AdminLayoutComponent } from "./layouts/admin-layout/admin-layout.component";
 import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
@@ -63,6 +65,8 @@ import { FingerprintFooterComponent } from './pages/fingerprint-footer/fingerpri
   providers: [{
     provide: MAT_RADIO_DEFAULT_OPTIONS,
     useValue: { color: 'accent' },
+  },{
+    provide: LocationStrategy, useClass: HashLocationStrategy
   }],
   bootstrap: [AppComponent]
 })
